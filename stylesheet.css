@@ -1,0 +1,10 @@
+button {
+    color: white;
+    background-color: purple;
+}
+
+#start-quiz {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
