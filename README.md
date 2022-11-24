@@ -1,4 +1,4 @@
-# Calendar Log
+# Code Quiz
 
 ## Table of Contents
 
@@ -21,7 +21,7 @@ Code Quiz is a website that tests your understanding of Javascript.
 
 ## Deployed Application Link
 
-https://hellahunter.github.io/Calendar-Log/
+https://hellahunter.github.io/Code-Quiz/
 
 ## Installation
 
