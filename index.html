@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Coding Quiz Time!</title>
+    <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
@@ -13,10 +14,24 @@
     <header class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="d-inline-flex justify-content-start col-12 col-md-6">
-                    <p id="high-scores">High Scores</p>
+                <div class="d-inline-flex justify-content-start col-12 col-md-4">
+                    <button type="button" class="btn btn-primary" id="high-scores">High Scores</button>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <br>
+                            <h5>High Scores!</h5>
+                            <br>
+                            <ol id="leaderboard-list">
+                                
+                            </ol>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-inline-flex justify-content-end col-12 col-md-6">
+                <div class="d-inline-flex justify-content-center col-12 col-md-4">
+                    <p>Score:<span id="count">0</span></p>
+                </div>
+                <div class="d-inline-flex justify-content-end col-12 col-md-4">
                     <p>Timer:<span id="timer"></span></p>
                 </div>
             </div>
@@ -37,10 +52,10 @@
         <div class="d-flex flex-column justify-content-center border-bottom border-primary container">
             <p class="lead p-2" id="question">1.)  Why do Javascript and Java have similar names?</p>
             <ol>
-                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"> JavaScript is a stripped-down version of Java</button></li>
-                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">JavaScript's syntax is loosely based on Java's</button></li>
-                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">They both originated on the island of Java</button></li>
-                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">None of the above</button></li>
+                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers wrong1"> JavaScript is a stripped-down version of Java</button></li>
+                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers right1">JavaScript's syntax is loosely based on Java's</button></li>
+                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers wrong1">They both originated on the island of Java</button></li>
+                <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers wrong1">None of the above</button></li>
             </ol>
         </div>
         <p class="text-center result"></p>
@@ -51,10 +66,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">2.)  When a user views a page containing a JavaScript program, which machine actually executes the script?</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers right2">The User's machine running a Web browser</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers ">The Web server</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">A central machine deep within Netscape's corporate offices</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">None of the above</button></li>
                 </ol>
             </div>
         </div>
@@ -65,10 +80,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">3.)  ______ JavaScript is also called client-side JavaScript.</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Microsoft</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">Navigator</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">LiveWire</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Native</button></li>
                 </ol>
             </div>
         </div>
@@ -79,10 +94,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">4.)  __________ JavaScript is also called server-side JavaScript.</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Microsoft</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Navigator</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">LiveWire</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Native</button></li>
                 </ol>
             </div>
         </div>
@@ -93,10 +108,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">5.)  What are variables used for in JavaScript Programs?</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">Storing numbers, dates, and other values</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Varying randomly</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Causing high-school algebra flashbacks</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">None of the above</button></li>
                 </ol>
             </div>
         </div>
@@ -107,10 +122,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">6.)  _____ JavaScript statements embedded in an HTML page can respond to user events such as mouse-clicks, form input, and page navigation.</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">Client-side</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Server-side</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Local</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Native</button></li>
                 </ol>
             </div>
         </div>
@@ -119,12 +134,12 @@
     <article style="display:none;" id="questions_block7">
         <div class="container">
             <div class="d-flex flex-column justify-content-center">
-                <p class="lead p-2" id="question">7.)  What should appear at the very end of your JavaScript?</p>
+                <p class="lead p-2" id="question">7.)  What should appear at the very end of your JavaScript HTML tag?</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">The &lt;/script&gt;</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">The &lt;script&gt;</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">The END statement</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">None of the above</button></li>
                 </ol>
             </div>
         </div>
@@ -135,10 +150,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">8.)  Which of the following can't be done with client-side JavaScript?</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Sending a form's contents by email</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Validating a form</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"> Storing the form's contents to a database file on the server</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">None of the above</button></li>
                 </ol>
             </div>
         </div>
@@ -149,10 +164,10 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">9.)  Which of the following are capabilities of functions in JavaScript?</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Accept parameters and Return a value</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">Return a value</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">Accept parameters</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">None of the above</button></li>
                 </ol>
             </div>
         </div>
@@ -163,11 +178,32 @@
             <div class="d-flex flex-column justify-content-center">
                 <p class="lead p-2" id="question">10.)  Which of the following is not a valid JavaScript variable name?</p>
                 <ol>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
-                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers"></button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 correct-answers">burrito-time</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">glorp1</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">frankenstein</button></li>
+                    <li><button type="button" class="btn btn-primary text-white w-25 p-2 my-3 answers">kitties_revenge</button></li>
                 </ol>
+            </div>
+        </div>
+    </article>
+
+    <article style="display:none;" id="saveScore">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center">
+                <h2>Save your score!</h2>
+
+                <br> 
+
+                <form>
+                    <div class="form-group">
+                        <label for="userName">Initials</label>
+                        <input type="text" class="form-control" id="userName" aria-describedby="emailHelp" placeholder="Enter Initials Here">
+                    </div>
+                    <div>
+                        <span id="userScore"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="saveUserScore">Submit</button>
+                </form>
             </div>
         </div>
     </article>
